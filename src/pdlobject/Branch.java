@@ -22,4 +22,10 @@ public class Branch {
     
     public String getName(){return name;}
     public Location getLoc(){return location;}
+    public int getArea() {return area;}
+    
+    public void setName(String name){this.name = name;}
+    public void setLocation(Location loc){this.location = loc;}
+    public void setArea(int area){this.area = area;}
+    
 }
