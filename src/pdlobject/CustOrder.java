@@ -14,15 +14,31 @@ import javax.persistence.*;
  * @author alice
  */
 @Entity
-public class Order implements Serializable{
+public class CustOrder implements Serializable{
     @Id @GeneratedValue
     private long no_order;
+    @Id @ManyToOne
+    private Branch branch;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date order_date;
+
+    
+    @ManyToOne
     private Customer customer;
+    @ManyToOne
     private Employee employee;
+    @ManyToOne
     private Card card;
     private Good[] goods;
 
+    public Branch getBranch() {
+        return branch;
+    }
+
+    public void setBranch(Branch branch) {
+        this.branch = branch;
+    }
+    
     public long getNo_order() {
         return no_order;
     }
@@ -66,6 +82,4 @@ public class Order implements Serializable{
     public void setGoods(Good[] goods) {
         this.goods = goods;
     }
-    
-    
 }

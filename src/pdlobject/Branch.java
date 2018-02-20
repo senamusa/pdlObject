@@ -6,6 +6,7 @@
 package pdlobject;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -14,13 +15,17 @@ import javax.persistence.*;
  */
 @Entity
 public class Branch implements Serializable{
+
     @Id @GeneratedValue
     private long id;
     
     private String name;
     private Location location;
     private int area;
-    
+
+    public long getId() {
+        return id;
+    }
     public String getName(){return name;}
     public Location getLoc(){return location;}
     public int getArea() {return area;}

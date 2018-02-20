@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author alice
  */
-public class Location{
+public class Location implements Serializable{
     private String address;
     private String city;
     private String province;

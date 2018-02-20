@@ -5,19 +5,18 @@
  */
 package pdlobject;
 
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
 /**
  *
  * @author alice
  */
+@Entity
 public class RegularBranch extends Branch{
-    private Good[] goods;
 
-    public Good[] getGoods() {
-        return goods;
-    }
-
-    public void setGoods(Good[] goods) {
-        this.goods = goods;
-    }
+    @OneToMany(mappedBy = "branch")
+    private List<GoodQuantity> goodQuantitys;
     
 }

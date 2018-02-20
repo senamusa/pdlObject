@@ -20,10 +20,14 @@ public class Card implements Serializable{
 	@Id @GeneratedValue
     private long card_num;
 	
+    @ManyToOne
+    private Customer owner;
     private String type;
     private String bank;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date last_transaction_date;
     private Long total_amount_of_transaction;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date Expiry;
 
     public long getCard_num() {

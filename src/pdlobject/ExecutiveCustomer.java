@@ -6,6 +6,7 @@
 package pdlobject;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -13,6 +14,7 @@ import javax.persistence.Entity;
  */
 @Entity
 public class ExecutiveCustomer extends Customer {
+    @ManyToOne
     private Employee consultant;
     private int discount;
 

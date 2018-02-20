@@ -7,7 +7,10 @@ package pdlobject;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
+
+
 
 /**
  *
@@ -15,25 +18,76 @@ import javax.persistence.*;
  */
 @Entity
 public class Customer implements Serializable{
-    @Id @GeneratedValue
+
+    @OneToMany(mappedBy = "owner")
+    private List<Card> cards;
+    @Id
     private long ID;
     
     private String name;
     private Location location;
     private String phone;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob;
-    public int getAge(){return 0;}
-    
-    public long getID(){return ID;}
-    public String getName(){return name;}
-    public Location getLoc(){return location;}
-    public String getPhone(){return phone;}
-    public Date getDOB(){return dob;}
-    
-    public void setName(String name) {this.name = name;}
-    public void setLoc(Location loc) {
-        this.location = loc;
+    @ManyToOne
+    private Branch registered_branch;
+
+    public Branch getRegistered_branch() {
+        return registered_branch;
     }
-    public void setPhone(String phone){this.phone = phone;}
-    public void setDOB(Date dob){this.dob = dob;}
+
+    public void setRegistered_branch(Branch registered_branch) {
+        this.registered_branch = registered_branch;
+    }
+    public int getAge(){return 0;}
+
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
+
+    public long getID() {
+        return ID;
+    }
+
+    public void setID(long ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+    
+    
 }
