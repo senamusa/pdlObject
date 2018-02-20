@@ -5,6 +5,7 @@
  */
 package pdlobject;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -13,7 +14,7 @@ import javax.persistence.*;
  * @author alice
  */
 @Entity
-public class Order {
+public class Order implements Serializable{
     @Id @GeneratedValue
     private long no_order;
     private Date order_date;
