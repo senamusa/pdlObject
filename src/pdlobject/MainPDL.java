@@ -5,6 +5,8 @@
  */
 package pdlobject;
 
+import javax.persistence.*;
+
 /**
  *
  * @author alice
@@ -16,6 +18,9 @@ public class MainPDL {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("$objectdb/db/pdl.odb");
+        EntityManager em = emf.createEntityManager();
+        
     }
     
 }
