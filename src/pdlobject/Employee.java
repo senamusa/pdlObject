@@ -29,7 +29,7 @@ public class Employee implements Serializable{
 	
 	private String name;
 	private Location location;
-	private String phone;
+	private List<String> phone;
         @Temporal(javax.persistence.TemporalType.DATE)
 	private Date startDate;
 	private long salary;
@@ -85,11 +85,11 @@ public class Employee implements Serializable{
 		this.location = location;
 	}
 
-	public String getPhone() {
+	public List<String> getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(List<String> phone) {
 		this.phone = phone;
 	}
 
