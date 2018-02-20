@@ -5,6 +5,7 @@
  */
 package pdlobject;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -12,7 +13,7 @@ import javax.persistence.*;
  * @author alice
  */
 @Entity
-public class Good {
+public class Good implements Serializable{
     @Id @GeneratedValue
     private long ID;
     private String description;
