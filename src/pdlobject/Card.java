@@ -5,8 +5,9 @@
  */
 package pdlobject;
 
+import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 
 
@@ -15,8 +16,10 @@ import javax.persistence.Entity;
  * @author alice
  */
 @Entity
-public class Card {
+public class Card implements Serializable{
+	@Id @GeneratedValue
     private long card_num;
+	
     private String type;
     private String bank;
     private Date last_transaction_date;

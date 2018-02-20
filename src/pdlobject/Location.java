@@ -5,11 +5,13 @@
  */
 package pdlobject;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alice
  */
-public class Location {
+public class Location{
     private String address;
     private String city;
     private String province;
